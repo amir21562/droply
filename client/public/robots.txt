@@ -3,4 +3,4 @@ Allow: /
 Disallow: /?code=
 Disallow: /room
 
-Sitemap: https://shareroom-rybjadm4.manus.space/sitemap.xml
+Sitemap: https://droply.promptifyer.online/sitemap.xml
