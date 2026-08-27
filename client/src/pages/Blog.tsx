@@ -61,6 +61,21 @@ const articles: Article[] = [
       { heading: "Step 3: Check the file before downloading", paragraphs: ["Images and videos can be previewed directly in the browser. For a document or other file, check its name and size before selecting Download. The download panel shows percentage and transferred bytes, and the receiver can cancel an active transfer if the connection needs to be restarted.", "If the transfer is interrupted, reconnect to the room while it is still active and try again. A 30-minute expiry keeps the room focused on the current handoff rather than long-term storage."] },
       { heading: "When to use a different tool", paragraphs: ["Droply is designed for a quick one-to-one exchange and currently supports files up to 100 MB per file. For multi-gigabyte production deliveries, team permissions, or permanent archives, use a dedicated cloud storage or large-transfer platform instead."] },
     ],
+    },
+  {
+    slug: "send-pdf-from-phone-to-laptop-without-an-app",
+    title: "How to Send a PDF from Phone to Laptop Without an App",
+    description: "Transfer a PDF from a phone to a laptop in a browser with a short code, no cable, no account, and no app installation.",
+    eyebrow: "PHONE TO LAPTOP",
+    readTime: "5 min read",
+    published: "2026-08-27",
+    keywords: ["send PDF from phone to laptop", "transfer PDF without app", "share PDF phone to computer"],
+    intro: "When a PDF is already on your phone and you need it on a laptop right away, emailing it to yourself or installing another app can add unnecessary steps. A short browser room gives both devices a simple place to meet.",
+    sections: [
+      { heading: "Open the room on the phone", paragraphs: ["On the phone holding the PDF, open Droply and choose Sender. A temporary room opens with a 4-digit code. Add the PDF to the room and keep the sender page open while the upload finishes.", "The code is designed for an immediate handoff: read it aloud, show it on screen, or send it to the recipient through a channel you already use. No Droply account is needed on either device."] },
+      { heading: "Join from the laptop", paragraphs: ["On the laptop, open Droply in any modern browser, choose Receiver, and enter the same 4-digit code. The PDF appears in the room feed once the upload is complete. Check the filename and size, then download it directly to the laptop.", "This browser-based workflow is useful when the phone and laptop do not share the same messaging app, cable, or operating-system ecosystem."] },
+      { heading: "Keep a one-time transfer temporary", paragraphs: ["A short-lived room is useful for a document you need right now, not as a permanent archive. Droply rooms expire after 30 minutes and currently support files up to 100 MB each. For recurring collaboration, sensitive long-term records, or larger files, use a storage service designed for those needs."] },
+    ],
   },
 ];
 
