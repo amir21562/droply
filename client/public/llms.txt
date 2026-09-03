@@ -1,0 +1,18 @@
+# Droply
+
+Droply is a private, temporary file and link sharing service designed for quick handoffs without accounts or signups.
+
+## Core Features
+- **No Signup Required:** Start sharing immediately using a 4-digit room code.
+- **Temporary Rooms:** Shared spaces and data expire automatically after use.
+- **Private Sharing:** Direct peer-to-peer style handoff for files, images, videos, and text.
+- **Cross-Platform:** Works seamlessly between mobile phones, tablets, and laptops.
+
+## Key Pages
+- Homepage: https://droply.promptifyer.online/
+- How it Works: https://droply.promptifyer.online/how-it-works
+- Security Details: https://droply.promptifyer.online/security
+- Blog & Guides: https://droply.promptifyer.online/blog
+
+## Technology
+Built with a modern stack including React, Vite, Express, and Node.js, optimized for speed and accessibility.
