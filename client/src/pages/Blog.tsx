@@ -16,6 +16,21 @@ type Article = {
 
 const articles: Article[] = [
   {
+    slug: "transfer-large-video-iphone-to-android-without-app",
+    title: "How to Transfer Large Videos from iPhone to Android Without an App",
+    description: "A complete 2026 guide to sending large 4K videos from iPhone to Android without quality loss, cables, or installing any apps.",
+    eyebrow: "IPHONE TO ANDROID",
+    readTime: "5 min read",
+    published: "2026-09-02",
+    keywords: ["transfer large video from iPhone to Android", "send video iPhone to Android without app", "iPhone to Android video sharing no quality loss"],
+    intro: "Sharing a high-quality video between an iPhone and an Android device shouldn't feel like a tech hurdle. While native tools like AirDrop don't cross the platform gap, a temporary browser-based room provides a fast, zero-install solution for large file handoffs.",
+    sections: [
+      { heading: "The challenge of cross-platform video sharing", paragraphs: ["iPhones and Android devices use different native sharing ecosystems (AirDrop vs. Quick Share), which often forces users to rely on messaging apps that compress videos or cloud services that require signups. For a one-time transfer of a large 4K video, these extra steps are unnecessary obstacles.", "A browser-based peer-to-peer style handoff bypasses these limitations by creating a neutral meeting point that works on any modern mobile browser."] },
+      { heading: "Step-by-Step: Sending from iPhone to Android", paragraphs: ["On your iPhone, open Droply in Safari and select 'Sender'. Choose the large video from your Photos library or Files app. Droply will generate a unique 4-digit code. Keep this page open while the video prepares for sharing.", "On the Android device, open Chrome or any browser, go to Droply, and select 'Receiver'. Enter the 4-digit code shown on the iPhone. You will immediately see the video in the room feed. Tap 'Download' to save the video in its original resolution without any compression."] },
+      { heading: "Why Droply is better for large videos", paragraphs: ["Unlike messaging apps, Droply does not compress your media. If you filmed a 4K video at 60fps, the recipient gets exactly that file. There are no accounts to create, no email addresses to share, and the temporary room expires automatically after 30 minutes, keeping your transfer private and clutter-free.", "Droply currently supports files up to 100MB per transfer, making it ideal for high-resolution clips, long recordings, or multiple photos shared at once."] },
+    ],
+  },
+  {
     slug: "share-files-between-two-phones-without-an-app",
     title: "How to Share Files Between Two Phones Without Installing an App",
     description: "Learn how to send photos, videos, documents, links, and text between two phones without signup, cables, or a messaging app.",
@@ -94,7 +109,7 @@ function setArticleMetadata(article: Article | null) {
   const script = document.createElement("script");
   script.id = schemaId;
   script.type = "application/ld+json";
-  script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+  script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph } );
   document.head.appendChild(script);
 }
 
