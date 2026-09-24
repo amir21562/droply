@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Droply logo">
+  <rect width="512" height="512" rx="120" fill="#eef1f4"/>
+  <defs>
+    <linearGradient id="drop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#drop)" d="M256 92c-74 90-132 156-132 230a132 132 0 0 0 264 0c0-74-58-140-132-230z"/>
+  <ellipse cx="212" cy="316" rx="30" ry="44" fill="#ffffff" opacity="0.28" transform="rotate(-18 212 316)"/>
+</svg>

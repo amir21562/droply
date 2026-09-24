@@ -103,6 +103,7 @@ function setArticleMetadata(article: Article | null) {
   const schemaId = "droply-blog-schema";
   document.getElementById(schemaId)?.remove();
   const url = `${window.location.origin}${article ? `/blog/${article.slug}` : "/blog"}`;
+  document.querySelector('link[rel="canonical"]')?.setAttribute("href", url);
   const graph: Record<string, unknown>[] = [{ "@type": "WebPage", "@id": url, url, name: title, description, isPartOf: { "@type": "WebSite", name: "Droply", url: window.location.origin } }];
   if (article) graph.push({ "@type": "Article", headline: article.title, description, datePublished: article.published, dateModified: article.published, author: { "@type": "Organization", name: "Droply" }, publisher: { "@type": "Organization", name: "Droply" }, mainEntityOfPage: url, keywords: article.keywords.join(", ") });
   else graph.push({ "@type": "CollectionPage", name: title, mainEntity: articles.map(item => `${window.location.origin}/blog/${item.slug}`) });

@@ -46,9 +46,21 @@ export default function Info({ page }: { page: PageKey }) {
     const schemaId = "droply-page-schema";
     document.getElementById(schemaId)?.remove();
     const pageUrl = `${window.location.origin}/${page === "how" ? "how-it-works" : page}`;
+    document.querySelector('link[rel="canonical"]')?.setAttribute("href", pageUrl);
     const graph: Record<string, unknown>[] = [{ "@type": "WebPage", "@id": pageUrl, url: pageUrl, name: data.title, description: data.description, isPartOf: { "@type": "WebSite", name: "Droply", url: window.location.origin } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Droply", item: window.location.origin }, { "@type": "ListItem", position: 2, name: data.eyebrow, item: pageUrl }] }];
     if (page === "faq") {
-      graph.push({ "@type": "FAQPage", mainEntity: ["Do I need an account?", "What can I share?", "What is the file limit?", "How long does a room last?", "Can the receiver preview media?", "Is Droply a permanent cloud drive?"].map((name, index) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text: ["No. The sender creates a temporary room and the receiver joins with the 4-digit code.", "The room supports text, links, images, videos, and documents.", "The current limit is 100 MB per file.", "Rooms are designed to expire automatically after 30 minutes.", "Images and videos can be previewed when the browser supports the media type.", "No. Droply is designed for a short, one-time handoff."][index] } })) });
+      // Keep in sync with scripts/prerender-seo.mjs FAQ_QA and the visible FAQ list below.
+      const faqPairs: [string, string][] = [
+        ["What is Droply?", "Droply is a free browser-based tool for sharing files, links and text. You create a temporary room, get a private 4-digit code, and anyone with the code can join from any device — no signup and no app install needed."],
+        ["How does the 4-digit code work?", "When you create a room, Droply gives you a unique 4-digit code. Share that code with the other person — they enter it on droply.promptifyer.online from any device and instantly join your room to send or receive files."],
+        ["Do I need to sign up or install an app?", "No. Droply works entirely in the browser with no account and no installation. Open the site, create or join a room with a 4-digit code, and start sharing."],
+        ["What is the file size limit?", "Each transfer supports files up to 100 MB. You can share documents, photos, videos, links and text within that limit, free."],
+        ["How long do Droply rooms last?", "Rooms are temporary by design and expire automatically after 30 minutes. Once a room expires, its code stops working and the shared content is no longer accessible."],
+        ["Is Droply private and secure?", "Yes. Rooms are private by default — only people with your 4-digit code can join. There are no accounts to hack, rooms expire automatically after 30 minutes, and the site is served over HTTPS. See our Security page for details."],
+        ["Which devices does Droply work on?", "Any device with a modern browser: iPhone, Android, Windows, Mac and Linux. It's ideal for moving files between your own devices, like from phone to laptop, or sharing with someone else."],
+        ["Is Droply free?", "Yes, Droply is completely free — share files up to 100 MB per transfer with no account, no subscription and no hidden limits on the number of rooms you create."],
+      ];
+      graph.push({ "@type": "FAQPage", mainEntity: faqPairs.map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) });
     }
     const script = document.createElement("script"); script.id = schemaId; script.type = "application/ld+json"; script.textContent = JSON.stringify({ "@context": "https://schema.org", "@graph": graph }); document.head.appendChild(script);
     return () => document.getElementById(schemaId)?.remove();
@@ -100,13 +112,16 @@ function PrivacyContent() {
 }
 
 function FaqContent() {
-  const faqs = [
-    ["Do I need an account?", "No. The sender creates a temporary room and the receiver joins with the 4-digit code."],
-    ["What can I share?", "The room supports text, links, images, videos, and documents. Multiple files can be added before or after the receiver joins."],
-    ["What is the file limit?", "The current limit is 100 MB per file. Unsupported types or oversized files are rejected before sharing."],
-    ["How long does a room last?", "Rooms are designed to expire automatically after 30 minutes, with the remaining time shown in the room."],
-    ["Can the receiver preview media?", "Images and videos can be previewed in the room when the browser supports the supplied media type."],
-    ["Is Droply a permanent cloud drive?", "No. Droply is designed for a short, one-time handoff. Use a dedicated storage service when you need long-term access or collaboration."],
+  // Visible FAQ text must match the FAQPage JSON-LD (client-side + prerendered) exactly.
+  const faqs: [string, string][] = [
+    ["What is Droply?", "Droply is a free browser-based tool for sharing files, links and text. You create a temporary room, get a private 4-digit code, and anyone with the code can join from any device — no signup and no app install needed."],
+    ["How does the 4-digit code work?", "When you create a room, Droply gives you a unique 4-digit code. Share that code with the other person — they enter it on droply.promptifyer.online from any device and instantly join your room to send or receive files."],
+    ["Do I need to sign up or install an app?", "No. Droply works entirely in the browser with no account and no installation. Open the site, create or join a room with a 4-digit code, and start sharing."],
+    ["What is the file size limit?", "Each transfer supports files up to 100 MB. You can share documents, photos, videos, links and text within that limit, free."],
+    ["How long do Droply rooms last?", "Rooms are temporary by design and expire automatically after 30 minutes. Once a room expires, its code stops working and the shared content is no longer accessible."],
+    ["Is Droply private and secure?", "Yes. Rooms are private by default — only people with your 4-digit code can join. There are no accounts to hack, rooms expire automatically after 30 minutes, and the site is served over HTTPS. See our Security page for details."],
+    ["Which devices does Droply work on?", "Any device with a modern browser: iPhone, Android, Windows, Mac and Linux. It's ideal for moving files between your own devices, like from phone to laptop, or sharing with someone else."],
+    ["Is Droply free?", "Yes, Droply is completely free — share files up to 100 MB per transfer with no account, no subscription and no hidden limits on the number of rooms you create."],
   ];
   return <section className="faq-list">{faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</section>;
 }

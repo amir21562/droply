@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /?code=
 Disallow: /room
+Disallow: /api/
 
 Sitemap: https://droply.promptifyer.online/sitemap.xml
