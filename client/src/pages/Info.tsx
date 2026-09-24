@@ -12,7 +12,7 @@ const pageData = {
   },
   security: {
     title: "Droply Security — Temporary Private File Sharing",
-    description: "Understand Droply’s temporary rooms, expiry behavior, file validation, and the security controls planned for private sharing.",
+    description: "How Droply protects temporary rooms: 30-minute expiry, code-based access, 100 MB limits, and what we deliberately don't promise.",
     eyebrow: "SECURITY",
     heading: "Privacy should be visible, not vague.",
     intro: "Droply keeps the handoff small, temporary, and explicit. We explain what happens to your content instead of hiding behind broad security slogans.",
@@ -102,8 +102,10 @@ function HowContent() {
 
 function SecurityContent() {
   return <>
-    <section className="info-card"><h2>What Droply protects</h2><p>Rooms are temporary and access is based on a short code or room link. The product validates file type and size at the client and server boundaries, and the current launch limit is 100 MB per file.</p><p>For a production-scale release, Droply should use durable session storage, object storage or a peer/relay transport, rate limiting, malware scanning, abuse reporting, and a documented deletion process. The public security promise must always match the deployed implementation.</p></section>
-    <section className="info-grid"><Feature icon={<ShieldCheck size={19} />} title="Precise promises" text="We prefer specific statements about storage, expiry, access, and encryption over vague claims." /><Feature icon={<LockKeyhole size={19} />} title="Short-lived access" text="Temporary rooms reduce the time content is available and make the sharing purpose explicit." /><Feature icon={<CheckCircle2 size={19} />} title="Safe boundaries" text="File size and content-type validation help keep anonymous sharing practical and abuse-aware." /></section>
+    <section className="info-card"><h2>What Droply does</h2><p>Every room is temporary. It expires automatically 30 minutes after creation — the code stops working and the room's content is deleted from the server. If everyone leaves the room earlier, it is deleted right away.</p><p>Rooms live in the server's memory, not in a database or file archive. There are no accounts, so there are no passwords to steal and no profiles to link a share to. Traffic between your browser and Droply travels over HTTPS.</p><p>The 4-digit code is the only key: anyone who has it can join, with no approval step and no per-person permissions. Share it directly with the person you trust, the way you would hand them a physical key.</p></section>
+    <section className="info-card"><h2>Boundaries we enforce</h2><p>Files are limited to 100 MB each, checked in your browser and enforced again on the server — oversized uploads are rejected before they are stored. Shared download links are single-purpose tokens that expire after 2 minutes.</p></section>
+    <section className="info-card"><h2>What Droply does not do</h2><p>We do not scan file contents for malware, and a 4-digit code is not a password — it has 10,000 combinations and is designed to be typed, not to resist guessing. Do not use Droply for anything you would not hand to someone on a USB stick.</p></section>
+    <section className="info-grid"><Feature icon={<ShieldCheck size={19} />} title="Specific over vague" text="We describe storage, expiry, and access exactly as implemented — no sweeping security slogans." /><Feature icon={<LockKeyhole size={19} />} title="Short-lived by design" text="Content is deleted when the 30-minute timer runs out — or sooner, when everyone leaves." /><Feature icon={<CheckCircle2 size={19} />} title="Enforced limits" text="100 MB per file, validated on both sides; download tokens expire in 2 minutes." /></section>
   </>;
 }
 
