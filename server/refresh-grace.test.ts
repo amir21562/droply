@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { appRouter, leaveAnonymousParticipant } from "./routers";
+import { appRouter, leaveAnonymousParticipant, prepareAnonymousDownload, updateAnonymousDownload } from "./routers";
 
 const caller = appRouter.createCaller({} as any);
 
@@ -79,5 +79,38 @@ describe("refresh persistence (grace period)", () => {
     await expect(
       caller.session.get({ sessionId: session.id, participantId: "not-a-participant" })
     ).rejects.toThrow("not connected");
+  });
+});
+
+describe("receiver download notifications", () => {
+  it("counts a receiver's completed download on the item, ignores the sender's own download, and never double-counts", async () => {
+    const { session, participantId } = await caller.session.create();
+    const item = await caller.session.addItem({
+      sessionId: session.id,
+      participantId,
+      kind: "file",
+      name: "a.png",
+      mimeType: "image/png",
+      size: 4,
+      data: "abcd",
+    });
+    expect(item.downloads).toBe(0);
+
+    const joined = await caller.session.join({ code: session.code });
+    const token = prepareAnonymousDownload({ sessionId: session.id, participantId: joined.participantId, itemId: item.id });
+    updateAnonymousDownload(token.token, "complete");
+    const refreshed = await caller.session.get({ sessionId: session.id, participantId });
+    expect(refreshed.items[0].downloads).toBe(1);
+
+    // sender re-downloading their own file must not trigger a "receiver downloaded" notification
+    const own = prepareAnonymousDownload({ sessionId: session.id, participantId, itemId: item.id });
+    updateAnonymousDownload(own.token, "complete");
+    const again = await caller.session.get({ sessionId: session.id, participantId });
+    expect(again.items[0].downloads).toBe(1);
+
+    // completing the same token twice must not double-count
+    updateAnonymousDownload(token.token, "complete");
+    const thrice = await caller.session.get({ sessionId: session.id, participantId });
+    expect(thrice.items[0].downloads).toBe(1);
   });
 });
