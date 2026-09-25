@@ -95,7 +95,7 @@ function SparkMark() { return <span className="spark-mark">✦</span>; }
 
 function HowContent() {
   return <>
-    <section className="info-card"><Step number="01" title="Choose Sender">Open Droply and choose “I am Sender.” No account, email, or password is needed.</Step><Step number="02" title="Share the code">Drop files or add text and links. Droply gives you a short 4-digit code and a shareable room link.</Step><Step number="03" title="Hand it over">Your receiver enters the code, sees the shared feed, previews supported media, and copies or downloads what they need.</Step></section>
+    <section className="info-card"><Step number="01" title="Drop files">Open Droply and drop your files — a private room is created instantly with a 4-digit code. No account, email, or password is needed.</Step><Step number="02" title="Share the code">Drop files or add text and links. Droply gives you a short 4-digit code and a shareable room link.</Step><Step number="03" title="Hand it over">Your receiver enters the code, sees the shared feed, previews supported media, and copies or downloads what they need.</Step></section>
     <section className="info-grid"><Feature icon={<Clock3 size={19} />} title="Temporary by default" text="Rooms are designed for the immediate handoff and expire automatically after 30 minutes." /><Feature icon={<LockKeyhole size={19} />} title="No account required" text="The sender and receiver use a code instead of a signup flow, keeping the interaction fast." /><Feature icon={<CheckCircle2 size={19} />} title="Mixed content" text="Share files, images, videos, links, and text together in one chronological room feed." /></section>
   </>;
 }
