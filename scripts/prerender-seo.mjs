@@ -261,6 +261,28 @@ const POSTS = [
       "Phone-to-laptop PDF transfer without an app: open Droply on both devices, enter the 4-digit code, done in seconds.",
     published: "2026-08-27",
   },
+  {
+    slug: "droply-vs-wetransfer-vs-smash",
+    title: "Droply vs WeTransfer vs Smash: Honest Comparison | Droply",
+    articleTitle: "Droply vs WeTransfer vs Smash: Honest Comparison for One-Time Sharing",
+    description:
+      "Droply vs WeTransfer vs Smash vs SwissTransfer vs FilePizza, compared honestly: size limits, expiry, signup friction — and where each tool actually wins.",
+    ogTitle: "Droply vs WeTransfer vs Smash: Honest Comparison for One-Time Sharing",
+    ogDescription:
+      "Five free file-sharing tools compared honestly — limits, expiry, and where each one actually wins.",
+    published: "2026-09-25",
+  },
+  {
+    slug: "b1-is-it-safe-without-account",
+    title: "Is It Safe to Share Files Without an Account? | Droply",
+    articleTitle: "Is It Safe to Share Files Without an Account? An Honest Answer",
+    description:
+      "Is sharing files without an account safe? An honest answer: what no-signup removes, what it doesn't protect, and when an account is actually the safer choice.",
+    ogTitle: "Is It Safe to Share Files Without an Account? An Honest Answer",
+    ogDescription:
+      "What no-signup file sharing changes, what it doesn't protect, and five rules for doing it safely.",
+    published: "2026-09-25",
+  },
 ];
 
 const ROUTES = [
