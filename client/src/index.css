@@ -128,3 +128,11 @@ button { cursor: pointer; }
   .code-entry input { height:54px; font-size:24px; }
   .code-entry .join-button { min-height:54px; }
 }
+
+.split-code { display:flex; gap:8px; margin-top:10px; }
+.split-box { width:54px; height:60px; border:1px solid #dce1e5; border-radius:13px; background:#f7f8f9; font:600 26px 'DM Mono'; text-align:center; color:#18222d; caret-color:#18222d; transition:border-color .15s, box-shadow .15s; }
+.split-box:focus { outline:none; border-color:#789bb7; box-shadow:0 0 0 3px rgba(120,155,183,.22); background:#fff; }
+.split-box:disabled { opacity:.6; }
+.split-box[aria-invalid="true"] { border-color:#d08a8a; box-shadow:0 0 0 3px rgba(208,138,138,.18); }
+.downloaded-chip { display:inline-flex; align-items:center; gap:4px; margin-left:8px; padding:3px 9px; border-radius:999px; background:#e5efe9; color:#4d7a5f; font:600 10px 'DM Mono'; letter-spacing:.04em; }
+@media (max-width: 860px) { .split-box { width:100%; max-width:64px; height:56px; } }
