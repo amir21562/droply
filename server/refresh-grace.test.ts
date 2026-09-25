@@ -48,6 +48,24 @@ describe("refresh persistence (grace period)", () => {
     expect(joined.participantId).not.toBe(participantId);
   });
 
+  it("destroy lets only the original sender delete the room immediately", async () => {
+    const { session, participantId } = await caller.session.create();
+    await caller.session.addItem({
+      sessionId: session.id,
+      participantId,
+      kind: "text",
+      name: "note",
+      size: 4,
+      data: "note",
+    });
+    const joined = await caller.session.join({ code: session.code });
+    await expect(
+      caller.session.destroy({ sessionId: session.id, participantId: joined.participantId })
+    ).rejects.toThrow("Only the sender");
+    await caller.session.destroy({ sessionId: session.id, participantId });
+    await expect(caller.session.get({ sessionId: session.id, participantId })).rejects.toThrow();
+  });
+
   it("rejects a stranger's stale participant id on get (receiver must rejoin via code)", async () => {
     const { session, participantId } = await caller.session.create();
     await caller.session.addItem({

@@ -16,7 +16,7 @@ button { cursor: pointer; }
 @media (max-width: 520px) { .hero h1 { font-size:74px; }.hero-subtitle { font-size:15px; }.entry-card { padding:23px; }.room-meta { font-size:10px; gap:5px; letter-spacing:.01em; }.room-meta svg { width:12px; height:12px; }.room-meta .live-dot { margin-right:2px; }.room-meta .meta-divider { margin:0 3px; }.room-heading { display:block; }.secure-badge { display:inline-flex; margin-top:17px; }.compose-row { display:block; }.send-button { width:100%; justify-content:center; padding:13px; margin-top:8px; }.file-line { align-items:flex-start; flex-direction:column; }.download-button { align-self:flex-start; } }
 
 .info-shell { min-height:100vh; background:#eef1f4; color:#15181c; position:relative; overflow:hidden; }.info-shell:before,.info-shell:after { content:""; position:absolute; border-radius:999px; pointer-events:none; z-index:0; }.info-shell:before { width:420px; height:420px; background:#c6dbee; left:-220px; top:170px; }.info-shell:after { width:300px; height:300px; background:#f1d9dc; right:-150px; bottom:-130px; }.info-topbar { height:82px; padding:0 6vw; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; }.back-link { display:flex; align-items:center; gap:7px; color:#78858e; font:500 11px 'DM Mono'; text-decoration:none; }.info-wrap { max-width:1000px; margin:0 auto; padding:90px 5vw 100px; position:relative; z-index:1; }.info-hero { max-width:760px; }.info-hero .kicker { margin-bottom:20px; }.spark-mark { color:#789bb7; font-size:16px; }.info-hero h1 { font:700 clamp(48px,7vw,92px)/.92 'Space Grotesk'; letter-spacing:-.09em; margin:0 0 25px; max-width:840px; }.info-hero > p { color:#555d65; font-size:18px; line-height:1.65; max-width:620px; margin:0; }.info-cta { display:inline-flex; align-items:center; gap:8px; margin-top:30px; color:#fff; background:#15181c; border-radius:12px; padding:13px 16px; text-decoration:none; font-size:12px; box-shadow:0 10px 22px rgba(18,20,23,.14); transition:transform .2s,box-shadow .2s; }.info-cta:hover { transform:translateY(-2px); box-shadow:0 14px 28px rgba(18,20,23,.18); }.info-content { max-width:760px; margin-top:70px; }.info-card { padding:30px; border:1px solid rgba(255,255,255,.95); border-radius:22px; background:rgba(255,255,255,.75); box-shadow:0 22px 55px rgba(65,79,91,.1); backdrop-filter:blur(14px); }.info-card h2 { font:600 26px 'Space Grotesk'; letter-spacing:-.05em; margin:0 0 15px; }.info-card h2:not(:first-child) { margin-top:30px; }.info-card p { color:#68747d; line-height:1.7; font-size:14px; margin:0 0 14px; }.info-step { display:grid; grid-template-columns:48px 1fr; gap:16px; padding:19px 0; border-bottom:1px solid #e1e6e9; }.info-step:first-child { padding-top:0; }.info-step:last-child { border-bottom:0; padding-bottom:0; }.info-step > span { color:#4e6475; font:500 11px 'DM Mono'; padding-top:3px; }.info-step h3,.info-feature h3 { font:600 16px 'Space Grotesk'; margin:0 0 5px; }.info-step p,.info-feature p { color:#555d65; font-size:13px; line-height:1.6; margin:0; }.info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:14px; }.info-feature { padding:20px; background:#fff; border:1px solid #e5e9eb; border-radius:16px; }.info-feature-icon { display:grid; place-items:center; width:37px; height:37px; border-radius:12px; margin-bottom:16px; color:#6f91ad; background:#e5eff5; }.info-feature p { font-size:12px; }.faq-list { display:grid; gap:10px; }.faq-list details { padding:19px 20px; border:1px solid #e2e7e9; border-radius:15px; background:rgba(255,255,255,.78); }.faq-list summary { cursor:pointer; list-style:none; font:600 15px 'Space Grotesk'; }.faq-list summary::-webkit-details-marker { display:none; }.faq-list summary:after { content:'+'; float:right; color:#7f9ab1; font:500 18px 'DM Mono'; }.faq-list details[open] summary:after { content:'−'; }.faq-list p { color:#555d65; font-size:13px; line-height:1.65; margin:12px 20px 0 0; }.info-footer { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 6vw; color:#5c636a; font:500 10px 'DM Mono'; letter-spacing:.04em; }.info-footer nav { display:flex; gap:16px; }.info-footer a { color:#7f8e98; text-decoration:none; }.info-footer a:hover,.back-link:hover { color:#52738e; }
-@media (max-width:720px) { .info-wrap { padding:55px 20px 70px; }.info-hero h1 { font-size:56px; }.info-hero > p { font-size:16px; }.info-content { margin-top:48px; }.info-grid { grid-template-columns:1fr; }.info-card { padding:22px; }.info-footer { display:block; padding:20px; }.info-footer nav { flex-wrap:wrap; margin-top:15px; gap:12px; }.back-link { font-size:0; }.back-link svg { width:18px; height:18px; } }
+@media (max-width:720px) { .info-wrap { padding:55px 20px 70px; }.info-hero h1 { font-size:56px; }.info-hero > p { font-size:16px; }.info-content { margin-top:48px; }.info-grid { grid-template-columns:1fr; }.info-card { padding:22px; }.info-footer { display:block; padding:20px; }.info-footer nav { flex-wrap:wrap; margin-top:15px; gap:12px; }.back-link-text { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }.back-link svg { width:18px; height:18px; } }
 
 .landing-nav { display:flex; align-items:center; gap:14px; }.landing-nav a { color:#7f8e98; text-decoration:none; }.landing-nav a:hover { color:#15181c; }.landing-nav .nav-dot { width:3px; height:3px; border-radius:50%; background:#c9ced2; }
 
@@ -100,3 +100,31 @@ button { cursor: pointer; }
 
 /* --- Blog card meta spacing --- */
 .blog-card-top { display:flex; align-items:center; gap:10px; color:#5c636a; font:500 10px 'DM Mono'; margin-bottom:14px; }
+
+/* ---- UX overhaul: code hero, share row, steps, trust (2026-09-25) ---- */
+.code-panel strong { font-size:72px; letter-spacing:.12em; }
+.code-actions { display:flex; gap:18px; }
+.code-actions button { cursor:pointer; }
+.code-actions button:disabled { opacity:.45; cursor:default; }
+.room-qr { margin-top:14px; display:flex; align-items:center; gap:12px; padding:12px 14px; background:#fff; border:1px solid #e4e7e9; border-radius:14px; }
+.room-qr img { width:84px; height:84px; border-radius:8px; }
+.room-qr span { color:#5c636a; font:500 10px 'DM Mono'; letter-spacing:.1em; }
+.delete-now-button { display:flex; align-items:center; gap:7px; margin-top:14px; border:0; background:transparent; color:#a35b5b; font:500 11px 'DM Mono'; cursor:pointer; padding:8px 0; }
+.delete-now-button:hover { color:#7e3f3f; }
+.close-tab-hint { display:flex; align-items:center; gap:8px; margin:12px 0 0; padding:12px 14px; background:#e9f1ec; border:1px solid #dce8df; border-radius:12px; color:#4d5c53; font-size:12px; line-height:1.5; }
+.close-tab-hint svg { color:#709783; flex:none; }
+.steps-strip { max-width:1160px; margin:0 auto; padding:0 5vw 5vh; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; position:relative; z-index:1; }
+.step { display:flex; gap:14px; padding:20px; background:rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.95); border-radius:18px; box-shadow:0 14px 34px rgba(65,79,91,.1); }
+.step > span { display:grid; place-items:center; flex:none; width:34px; height:34px; border-radius:50%; background:#15181c; color:#fff; font:600 13px 'DM Mono'; }
+.step b { display:block; font:600 14px 'Space Grotesk'; margin-bottom:4px; }
+.step p { margin:0; color:#5c636a; font-size:12px; line-height:1.55; }
+.trust-bar { max-width:1160px; margin:0 auto; padding:0 5vw 9vh; display:flex; align-items:center; gap:8px; color:#5c636a; font:500 11px 'DM Mono'; line-height:1.6; position:relative; z-index:1; }
+.trust-bar svg { color:#92ad9e; flex:none; }
+@media (max-width:860px) {
+  .room-qr { display:none; }
+  .code-panel strong { font-size:56px; }
+  .steps-strip { grid-template-columns:1fr; padding:0 20px 40px; }
+  .trust-bar { padding:0 20px 60px; }
+  .code-entry input { height:54px; font-size:24px; }
+  .code-entry .join-button { min-height:54px; }
+}
