@@ -70,7 +70,7 @@ export default function Info({ page }: { page: PageKey }) {
     <main className="info-shell">
       <header className="info-topbar">
         <Link href="/" className="wordmark"><span className="wordmark-dot" /> droply</Link>
-        <Link href="/" className="back-link"><ArrowLeft size={15} /> Back to Droply</Link>
+        <Link href="/" className="back-link"><ArrowLeft size={15} /><span className="back-link-text">Back to Droply</span></Link>
       </header>
       <div className="info-wrap">
         <div className="info-hero">
