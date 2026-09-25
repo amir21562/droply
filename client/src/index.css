@@ -123,6 +123,9 @@ button { cursor: pointer; }
 .room-qr span { color:#5c636a; font:500 10px 'DM Mono'; letter-spacing:.1em; }
 .delete-now-button { display:flex; align-items:center; gap:7px; margin-top:14px; border:0; background:transparent; color:#a35b5b; font:500 11px 'DM Mono'; cursor:pointer; padding:8px 0; }
 .delete-now-button:hover { color:#7e3f3f; }
+.remove-item-button { display:inline-flex; align-items:center; gap:6px; border:1px solid #e9dcdc; background:transparent; color:#a35b5b; font:500 11px 'DM Mono', monospace; cursor:pointer; padding:6px 10px; border-radius:8px; margin-left:6px; }
+.remove-item-button:hover { background:#fdf0f0; border-color:#dcc0c0; color:#7e3f3f; }
+.remove-item-button.copy-text { margin-left:8px; }
 .close-tab-hint { display:flex; align-items:center; gap:8px; margin:12px 0 0; padding:12px 14px; background:#e9f1ec; border:1px solid #dce8df; border-radius:12px; color:#4d5c53; font-size:12px; line-height:1.5; }
 .close-tab-hint svg { color:#709783; flex:none; }
 .steps-strip { max-width:1160px; margin:0 auto; padding:0 5vw 5vh; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; position:relative; z-index:1; }
