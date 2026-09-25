@@ -114,3 +114,38 @@ describe("receiver download notifications", () => {
     expect(thrice.items[0].downloads).toBe(1);
   });
 });
+
+describe("sender remove item", () => {
+  async function makeRoomWithItems() {
+    const { session, participantId } = await caller.session.create();
+    const a = await caller.session.addItem({ sessionId: session.id, participantId, kind: "text", name: "one", size: 3, data: "one" });
+    const b = await caller.session.addItem({ sessionId: session.id, participantId, kind: "text", name: "two", size: 3, data: "two" });
+    return { sessionId: session.id, senderId: participantId, a, b };
+  }
+
+  it("lets the sender remove one item while keeping the rest", async () => {
+    const { sessionId, senderId, a } = await makeRoomWithItems();
+    const result = await caller.session.removeItem({ sessionId, participantId: senderId, itemId: a.id });
+    expect(result.id).toBe(a.id);
+    const restored = await caller.session.get({ sessionId, participantId: senderId });
+    expect(restored.items).toHaveLength(1);
+    expect(restored.items[0].name).toBe("two");
+  });
+
+  it("refuses a receiver trying to remove an item", async () => {
+    const fresh = await makeRoomWithItems();
+    const code = (await caller.session.get({ sessionId: fresh.sessionId, participantId: fresh.senderId })).code;
+    const joined = await caller.session.join({ code });
+    await expect(
+      caller.session.removeItem({ sessionId: fresh.sessionId, participantId: joined.participantId, itemId: fresh.a.id })
+    ).rejects.toThrow(/Only the sender/);
+    // the item is still there for everyone
+    const restored = await caller.session.get({ sessionId: fresh.sessionId, participantId: fresh.senderId });
+    expect(restored.items).toHaveLength(2);
+  });
+
+  it("throws NOT_FOUND for an item that is not in the room", async () => {
+    const { sessionId, senderId } = await makeRoomWithItems();
+    await expect(caller.session.removeItem({ sessionId, participantId: senderId, itemId: "nope" })).rejects.toThrow(/no longer in this room/);
+  });
+});
