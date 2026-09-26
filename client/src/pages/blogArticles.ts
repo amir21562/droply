@@ -1890,5 +1890,264 @@ export const articles: Article[] =
         ]
       }
     ]
+  },
+  {
+    "slug": "transfer-files-android-to-iphone-without-app",
+    "title": "How to Transfer Files from Android to iPhone Without an App",
+    "description": "Transfer files from Android to iPhone without installing an app: where Quick Share meets AirDrop in 2026, where it still doesn't, and the 4-digit-code method that works on any pair of phones.",
+    "eyebrow": "ANDROID TO IPHONE",
+    "readTime": "8 min read",
+    "published": "2026-09-26",
+    "keywords": [
+      "transfer files from android to iphone without app",
+      "send files android to iphone no app",
+      "share photos android to iphone without app"
+    ],
+    "intro": [
+      {
+        "kind": "p",
+        "text": "You have the file on your Android. They have an iPhone. Nobody wants to install anything, create an account, or compress a perfectly good photo into mush. For years this was the most annoying direction in phone-to-phone sharing. The good news: 2026 changed the landscape, and there is now a built-in option for some phones. The honest news: it doesn't cover everyone."
+      },
+      {
+        "kind": "p",
+        "text": "This guide covers both: what's new and who it works for, then the method that works on *any* Android and *any* iPhone — no install, no signup, original quality intact. If your job is specifically moving a large video the other way, our mirror guide covers [iPhone-to-Android video transfer](https://droply.promptifyer.online/blog/transfer-large-video-iphone-to-android-without-app)."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Why this direction was the hard one (and what changed in 2026)",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "The two phone worlds each built excellent sharing and aimed it inward. **AirDrop** is Apple-only: it runs on a peer-to-peer Wi-Fi protocol Apple never licensed out, so an Android phone simply can't see it. **Quick Share** (formerly Nearby Share) was Google's mirror image — Android, Chromebook, and Windows only. Two complete ecosystems, zero overlap. Bluetooth was never an escape hatch either: iOS has never supported generic Bluetooth file push to non-Apple devices."
+          },
+          {
+            "kind": "p",
+            "text": "**What changed:** starting in late 2025 and rolling out through 2026, Google made Quick Share interoperable with AirDrop. On supported Android phones — recent flagships like the Pixel 9/10 families, Samsung's Galaxy S24 and newer, and recent OnePlus/OPPO/Vivo/Xiaomi/HONOR flagships — you can now pick an iPhone straight out of the share sheet and send directly, peer-to-peer, no app on either side."
+          },
+          {
+            "kind": "p",
+            "text": "Three catches keep this from being the whole answer: the iPhone owner must set AirDrop to \"Everyone for 10 minutes\" (a buried setting that reverts itself); both phones must be next to each other — sending across town isn't what it's for; and older or budget Androids don't have the feature at all, with no app to add it. Genuinely great when all three conditions hold; useless otherwise. The rest of this guide is for everyone else."
+          }
+        ]
+      },
+      {
+        "heading": "Every method that actually works, compared honestly",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "No single method wins every situation. Here's the real field:"
+          },
+          {
+            "kind": "table",
+            "head": [
+              "Method",
+              "Anything to install?",
+              "Works on which phones?",
+              "Same room required?",
+              "Practical limits",
+              "Best when"
+            ],
+            "rows": [
+              [
+                "Quick Share → AirDrop (new)",
+                "No",
+                "Recent flagship Android + any recent iPhone",
+                "Yes",
+                "None stated; peer-to-peer",
+                "Big files, both people together, new phones"
+              ],
+              [
+                "Browser room + 4-digit code",
+                "No",
+                "Any Android + any iPhone",
+                "No",
+                "100 MB per file, room expires after 30 min",
+                "Quick no-setup shares, any phones, any distance"
+              ],
+              [
+                "WhatsApp / Telegram / email",
+                "The chat app you already have",
+                "Any",
+                "No",
+                "Compression (WhatsApp), ~25 MB email caps",
+                "You're already chatting there anyway"
+              ],
+              [
+                "Cloud drive link",
+                "Drive/Dropbox app + account",
+                "Any",
+                "No",
+                "Storage quota, upload-then-download wait",
+                "Large files when nobody's in a hurry"
+              ],
+              [
+                "Cable via a computer",
+                "No",
+                "Any",
+                "Physical access",
+                "Slow, manual, needs the computer",
+                "Last resort"
+              ]
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "Notice the pattern: the new built-in option wins on size and speed when you're together with new phones. The browser room wins on universality — the one method with no device requirements, no proximity requirement, and no accounts. Pick by your situation, not by loyalty."
+          }
+        ]
+      },
+      {
+        "heading": "The universal method: a 4-digit code, step by step",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "This is the Droply path, and it works identically whether the Android is a 2021 budget phone or a 2026 flagship, and whether the iPhone is across the table or across the country. Both phones just need a browser and an internet connection."
+          },
+          {
+            "kind": "p",
+            "text": "**On the Android (the sender):**"
+          },
+          {
+            "kind": "list",
+            "ordered": true,
+            "items": [
+              "Open your browser — Chrome, Firefox, Samsung Internet, anything — and go to [droply.promptifyer.online](https://droply.promptifyer.online/).",
+              "A private room is created instantly and you get a **4-digit code**. No signup, nothing to download.",
+              "Tap to add files and pick them from your file picker — photos, videos, PDFs, audio, anything up to 100 MB per file. You can add several files to one room.",
+              "Read the 4-digit code to the iPhone owner, or send it in a message. Only people with the code can join."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "**On the iPhone (the receiver):**"
+          },
+          {
+            "kind": "list",
+            "ordered": true,
+            "items": [
+              "Open Safari or Chrome and go to [droply.promptifyer.online](https://droply.promptifyer.online/).",
+              "Enter the 4-digit code. You're in the room immediately — no account, no install.",
+              "Tap any file to preview it, then download. Photos and videos can save straight to the Photos app; documents land in the Files app."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "That's the whole ceremony. When you're done, close the tab — the room expires on its own after 30 minutes and the code stops working. For the full mechanics of the code system, see [how the 4-digit code works](/blog/send-large-files-phone-to-phone-4-digit-code)."
+          }
+        ]
+      },
+      {
+        "heading": "Android-side details nobody mentions",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "The Android share sheet is generous, which creates one small trap: files that *look* like they're on your phone might actually live in the cloud. A photo in Google Photos with the little cloud icon, or a document in Google Drive, isn't on the device yet. If you pick it from the file picker and the upload stalls at zero, that's why — download it to the phone first (in Google Photos: open the photo, tap the three dots, \"Download\"; in Drive: tap the three dots next to the file, \"Download\"), then add it to the room."
+          },
+          {
+            "kind": "p",
+            "text": "Two more practical notes: **multiple files are fine** — add them one after another to the same room, each under 100 MB. And **you can close the tab after uploading** — the iPhone owner can download even with your browser closed, as long as the room hasn't expired."
+          }
+        ]
+      },
+      {
+        "heading": "iPhone-side details",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Safari handles this better than its reputation suggests. Downloads go to the download manager (the little down-arrow in the address bar) — if a download seems to vanish, check there first, it's almost always waiting in that list. Photos and videos offer \"Save to Photos\"; documents offer \"Save to Files.\" Two caveats: files near the 100 MB ceiling download most reliably on Wi-Fi rather than cellular, and if the iPhone is low on storage, large downloads fail with an unhelpful error — freeing a few hundred megabytes first saves a round of confusion."
+          }
+        ]
+      },
+      {
+        "heading": "Honest limits — read before you start",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "Every method has a ceiling, and we'd rather you meet ours here than mid-transfer:"
+          },
+          {
+            "kind": "list",
+            "ordered": false,
+            "items": [
+              "**100 MB per file.** Photos, PDFs, audio, and short clips fit comfortably. A long 4K video won't — trim it in your gallery app first, or split it into parts. (For the video-specific playbook including bitrate math, our [iPhone-to-Android video guide](https://droply.promptifyer.online/blog/transfer-large-video-iphone-to-android-without-app) covers the same principles in the reverse direction.)",
+              "**The room lasts 30 minutes.** That's by design — temporary rooms are the privacy model. Don't start an upload you can't finish in that window.",
+              "**Both phones need internet.** Unlike Quick Share↔AirDrop, which is peer-to-peer, a browser room relays through the internet. No connection, no transfer.",
+              "**It's not end-to-end encrypted.** Files travel over HTTPS (nobody on the coffee-shop Wi-Fi can snoop), but the relay server necessarily handles them to deliver them. For genuinely sensitive material, use a real E2EE tool — our [secure temporary sharing guide](/blog/secure-temporary-file-sharing-without-signup) explains the distinction."
+            ]
+          },
+          {
+            "kind": "p",
+            "text": "None of these are fine print; they're the design. If they fit your situation, the method is close to ideal. If they don't — say, a 2 GB video to another city — a cloud drive link is the honest recommendation, and our [Droply vs WeTransfer vs Smash comparison](/blog/droply-vs-wetransfer-vs-smash) maps tools to exactly those situations."
+          }
+        ]
+      },
+      {
+        "heading": "Troubleshooting the two failures you'll actually see",
+        "blocks": [
+          {
+            "kind": "p",
+            "text": "**\"The code doesn't work.\"** In nearly every case, one of three things: a mistyped digit (read it back one digit at a time), the room expired (30 minutes passed — creating a new one takes seconds), or a lookalike copy of the site (check the URL bar: droply.promptifyer.online). Guessing isn't a realistic failure mode — it's always one of those three."
+          },
+          {
+            "kind": "p",
+            "text": "**\"The download won't start on the iPhone.\"** Check Safari's download list first, then storage space, then the connection — near the 100 MB ceiling, switch to Wi-Fi. If the *upload* stalled on the Android side instead, the file was probably cloud-only; see the Google Photos/Drive note above."
+          }
+        ]
+      },
+      {
+        "heading": "FAQ",
+        "blocks": [
+          {
+            "kind": "faq",
+            "items": [
+              {
+                "q": "Can I AirDrop from Android to iPhone?",
+                "a": [
+                  "Sort of, as of 2026 — but not through Apple's AirDrop app itself. On recent flagship Android phones (Pixel 9/10, Galaxy S24 and newer, recent OnePlus/OPPO/Vivo/Xiaomi/HONOR flagships), Quick Share can now send directly to an iPhone's AirDrop: the iPhone sets AirDrop to \"Everyone for 10 minutes\" and the Android picks it from the share sheet. It needs both phones nearby, and older or budget Androids don't have it. Everything else still needs an app or a browser-based method — and a dedicated guide for when AirDrop won't cooperate is on our roadmap in a dedicated guide to what to do when AirDrop won't cooperate."
+                ]
+              },
+              {
+                "q": "Do I need to install anything on either phone?",
+                "a": [
+                  "No. The browser-room method works in Chrome, Samsung Internet, Firefox, Safari — whatever's already there. The person receiving your files shouldn't need to prepare anything."
+                ]
+              },
+              {
+                "q": "Is there a size limit?",
+                "a": [
+                  "100 MB per file through a Droply room. Most photos (2–8 MB) and PDFs fit easily; videos are the thing to watch. The [general phone-to-phone guide](/blog/share-files-between-two-phones-without-an-app) has the full picture on what fits."
+                ]
+              },
+              {
+                "q": "Does it work if we're in different cities?",
+                "a": [
+                  "Yes — that's where the browser room beats the new built-in option. Quick Share↔AirDrop needs both phones in the same room; a 4-digit-code room works over the internet from anywhere."
+                ]
+              },
+              {
+                "q": "Will my photos lose quality?",
+                "a": [
+                  "No. Files transfer bit-for-bit — no compression. What leaves the Android is exactly what lands on the iPhone. (This is the main quality advantage over WhatsApp, which compresses aggressively unless you use \"send as document.\")"
+                ]
+              },
+              {
+                "q": "What about sending videos?",
+                "a": [
+                  "Same method, same 100 MB per-file ceiling — short clips are fine, long 4K recordings need trimming first. The video-transfer principles in our [iPhone-to-Android guide](https://droply.promptifyer.online/blog/transfer-large-video-iphone-to-android-without-app) apply in this direction too."
+                ]
+              },
+              {
+                "q": "Is it private?",
+                "a": [
+                  "The room is private to whoever holds the 4-digit code and expires automatically after 30 minutes — no account, no history, nothing lingering. Share the code through a private message, not a group chat. The deeper answer is [is it safe to share files without an account](/blog/b1-is-it-safe-without-account).",
+                  "The short version: if both phones are recent flagships and you're standing next to each other, try Quick Share → AirDrop first — it's genuinely good now. For every other combination of phones, distances, and situations, [open a room and send it](https://droply.promptifyer.online/). Four digits, no install, done."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];

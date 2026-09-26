@@ -283,6 +283,17 @@ const POSTS = [
       "What no-signup file sharing changes, what it doesn't protect, and five rules for doing it safely.",
     published: "2026-09-25",
   },
+  {
+    slug: "transfer-files-android-to-iphone-without-app",
+    title: "Transfer Files from Android to iPhone Without an App | Droply",
+    articleTitle: "How to Transfer Files from Android to iPhone Without an App",
+    description:
+      "Transfer files from Android to iPhone without an app: where Quick Share meets AirDrop in 2026, where it doesn't, and the 4-digit-code method that works on any phones.",
+    ogTitle: "How to Transfer Files from Android to iPhone Without an App",
+    ogDescription:
+      "Android to iPhone file transfer with no app install — Quick Share vs AirDrop in 2026, and the 4-digit code that works on any pair of phones.",
+    published: "2026-09-26",
+  },
 ];
 
 const ROUTES = [
