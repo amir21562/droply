@@ -115,6 +115,11 @@ const RELATED: Record<string, { label: string; href: string }[]> = {
     { label: "How to Transfer Large Videos from iPhone to Android Without an App", href: "/blog/transfer-large-video-iphone-to-android-without-app" },
     { label: "How to Share Files Between Two Phones Without Installing an App", href: "/blog/share-files-between-two-phones-without-an-app" },
   ],
+  "transfer-files-android-to-iphone-without-app": [
+    { label: "How to Transfer Large Videos from iPhone to Android Without an App", href: "/blog/transfer-large-video-iphone-to-android-without-app" },
+    { label: "How to Share Files Between Two Phones Without Installing an App", href: "/blog/share-files-between-two-phones-without-an-app" },
+    { label: "How to Send Large Files from Phone to Phone with a 4-Digit Code", href: "/blog/send-large-files-phone-to-phone-4-digit-code" },
+  ],
 };
 
 export default function Blog() {
