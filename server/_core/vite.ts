@@ -63,6 +63,9 @@ const BLOG_SLUGS = [
   "secure-temporary-file-sharing-without-signup",
   "send-large-files-phone-to-phone-4-digit-code",
   "send-pdf-from-phone-to-laptop-without-an-app",
+  "droply-vs-wetransfer-vs-smash",
+  "b1-is-it-safe-without-account",
+  "transfer-files-android-to-iphone-without-app",
 ];
 
 export function serveStatic(app: Express) {
