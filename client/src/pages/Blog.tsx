@@ -1,4 +1,5 @@
-import { ArrowLeft, ArrowUpRight, Clock3, LockKeyhole, Sparkles } from "lucide-react";
+import { ArrowUpRight, Clock3, LockKeyhole, Sparkles } from "lucide-react";
+import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
 import { useEffect, type ReactNode } from "react";
 import { Link, useRoute } from "wouter";
 import { articles, type Article, type ArticleBlock } from "./blogArticles";
@@ -127,20 +128,20 @@ export default function Blog() {
   const article = match ? articles.find(item => item.slug === params?.slug) ?? null : null;
   useEffect(() => { setArticleMetadata(article); return () => document.getElementById("droply-blog-schema")?.remove(); }, [article]);
 
-  if (match && !article) return <main className="info-shell"><header className="info-topbar"><Link href="/blog" className="wordmark"><span className="wordmark-dot" /> droply</Link><Link href="/blog" className="back-link"><ArrowLeft size={15} /> Back to blog</Link></header><div className="info-wrap"><div className="info-hero"><div className="kicker"><Sparkles size={15} /> NOT FOUND</div><h1>This guide has moved.</h1><p>Return to the Droply blog for practical, search-friendly file-sharing guides.</p><Link href="/blog" className="info-cta">Browse the guides <ArrowUpRight size={17} /></Link></div></div></main>;
+  if (match && !article) return <main className="info-shell has-site-header"><SiteHeader /><div className="info-wrap"><div className="info-hero"><div className="kicker"><Sparkles size={15} /> NOT FOUND</div><h1>This guide has moved.</h1><p>Return to the Droply blog for practical, search-friendly file-sharing guides.</p><Link href="/blog" className="info-cta">Browse the guides <ArrowUpRight size={17} /></Link></div></div></main>;
   if (article) return <ArticleView article={article} />;
   return <BlogIndex />;
 }
 
 function BlogIndex() {
-  return <main className="info-shell blog-shell"><header className="info-topbar"><Link href="/" className="wordmark"><span className="wordmark-dot" /> droply</Link><Link href="/" className="back-link"><ArrowLeft size={15} /> Back to Droply</Link></header><div className="info-wrap"><div className="info-hero"><div className="kicker"><Sparkles size={15} /> DROPly GUIDES</div><h1>Share smarter, leave less behind.</h1><p>Practical answers for sending photos, videos, documents, links, and text between devices without signup.</p><Link href="/" className="info-cta">Create a private room <ArrowUpRight size={17} /></Link></div><div className="blog-grid">{articles.map(article => <Link key={article.slug} href={`/blog/${article.slug}`} className="blog-card"><div className="blog-card-top"><span className="blog-eyebrow">{article.eyebrow}</span><span>{article.readTime}</span></div><h2>{article.title}</h2><p>{article.description}</p><span className="blog-read">Read guide <ArrowUpRight size={15} /></span></Link>)}</div></div><BlogFooter /></main>;
+  return <main className="info-shell blog-shell has-site-header"><SiteHeader /><div className="info-wrap"><div className="info-hero"><div className="kicker"><Sparkles size={15} /> DROPly GUIDES</div><h1>Share smarter, leave less behind.</h1><p>Practical answers for sending photos, videos, documents, links, and text between devices without signup.</p><Link href="/" className="info-cta">Create a private room <ArrowUpRight size={17} /></Link></div><div className="blog-grid">{articles.map(article => <Link key={article.slug} href={`/blog/${article.slug}`} className="blog-card"><div className="blog-card-top"><span className="blog-eyebrow">{article.eyebrow}</span><span>{article.readTime}</span></div><h2>{article.title}</h2><p>{article.description}</p><span className="blog-read">Read guide <ArrowUpRight size={15} /></span></Link>)}</div></div><SiteFooter /></main>;
 }
 
 function ArticleView({ article }: { article: Article }) {
   const related = RELATED[article.slug] ?? [];
   return (
-    <main className="info-shell blog-shell">
-      <header className="info-topbar"><Link href="/" className="wordmark"><span className="wordmark-dot" /> droply</Link><Link href="/blog" className="back-link"><ArrowLeft size={15} /> All guides</Link></header>
+    <main className="info-shell blog-shell has-site-header">
+      <SiteHeader />
       <div className="article-wrap">
         <div className="article-hero">
           <div className="kicker"><Sparkles size={15} /> {article.eyebrow}</div>
@@ -173,9 +174,8 @@ function ArticleView({ article }: { article: Article }) {
           <div className="article-cta"><div><span className="blog-eyebrow">READY WHEN YOU ARE</span><h2>Try the two-device handoff.</h2><p>Open a temporary room and share what matters right now.</p></div><Link href="/" className="info-cta">Open Droply <ArrowUpRight size={17} /></Link></div>
         </article>
       </div>
-      <BlogFooter />
+      <SiteFooter />
     </main>
   );
 }
 
-function BlogFooter() { return <footer className="info-footer"><span>droply / practical sharing guides</span><nav><Link href="/blog">Blog</Link><Link href="/how-it-works">How it works</Link><Link href="/security">Security</Link><Link href="/privacy">Privacy</Link><Link href="/faq">FAQ</Link></nav></footer>; }

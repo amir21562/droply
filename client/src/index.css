@@ -156,3 +156,57 @@ button { cursor: pointer; }
 .split-box[aria-invalid="true"] { border-color:#d08a8a; box-shadow:0 0 0 3px rgba(208,138,138,.18); }
 .downloaded-chip { display:inline-flex; align-items:center; gap:4px; margin-left:8px; padding:3px 9px; border-radius:999px; background:#e5efe9; color:#4d7a5f; font:600 10px 'DM Mono'; letter-spacing:.04em; }
 @media (max-width: 860px) { .split-box { width:100%; max-width:64px; height:56px; } }
+
+/* ---- Site menu bar (SiteHeader) ---- */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(238,241,244,.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(21,24,28,.07); }
+.has-site-header { padding-top: 66px; }
+.site-header-inner { max-width: 1160px; margin: 0 auto; height: 66px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-nav { display: flex; align-items: center; gap: 26px; }
+.site-nav a { color: #5c636a; text-decoration: none; font: 500 13.5px 'DM Sans'; transition: color .15s; }
+.site-nav a:hover { color: #15181c; }
+.site-nav a.active { color: #15181c; font-weight: 700; }
+.site-header-actions { display: flex; align-items: center; gap: 10px; }
+.site-cta { display: inline-flex; align-items: center; border: 0; border-radius: 11px; background: #15181c; color: #fff; text-decoration: none; font: 600 12.5px 'DM Sans'; padding: 10px 16px; box-shadow: 0 8px 18px rgba(18,20,23,.16); transition: transform .15s; }
+.site-cta:hover { transform: translateY(-1px); }
+.nav-toggle { display: none; place-items: center; width: 40px; height: 40px; border: 1px solid #dfe3e6; border-radius: 11px; background: #fff; color: #15181c; }
+.mobile-menu { display: none; flex-direction: column; gap: 2px; padding: 10px 5vw 16px; background: rgba(238,241,244,.97); border-bottom: 1px solid rgba(21,24,28,.07); }
+.mobile-menu a { color: #39434c; text-decoration: none; font: 600 15px 'DM Sans'; padding: 11px 4px; border-bottom: 1px solid #e4e7e9; }
+.mobile-menu a:last-child { border-bottom: 0; }
+.mobile-menu a.active { color: #15181c; }
+
+/* ---- Homepage guides section ---- */
+.home-guides { max-width: 1160px; margin: 0 auto; padding: 4vh 5vw 7vh; position: relative; z-index: 1; }
+.guides-head { max-width: 560px; margin-bottom: 28px; }
+.guides-head h2 { font: 600 clamp(30px, 4vw, 44px) 'Space Grotesk'; letter-spacing: -.05em; margin: 0 0 10px; color: #15181c; }
+.guides-head p { color: #555d65; font-size: 15px; line-height: 1.65; margin: 0; }
+.guides-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.guide-card h3 { font: 600 19px 'Space Grotesk'; color: #15181c; margin: 0 0 10px; line-height: 1.35; }
+.blog-read { display: inline-flex; align-items: center; gap: 5px; color: #2f6f9e; font: 600 12.5px 'DM Sans'; margin-top: 4px; }
+.guides-all { display: inline-flex; align-items: center; gap: 6px; margin-top: 22px; color: #15181c; font: 600 13.5px 'DM Sans'; text-decoration: none; border-bottom: 2px solid #15181c; padding-bottom: 3px; }
+.guides-all:hover { color: #2f6f9e; border-color: #2f6f9e; }
+
+/* ---- Site footer (shared) ---- */
+.site-footer { position: relative; z-index: 1; border-top: 1px solid rgba(21,24,28,.07); background: rgba(255,255,255,.55); }
+.site-footer-inner { max-width: 1160px; margin: 0 auto; padding: 26px 5vw; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+.site-footer-nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.site-footer-nav a { color: #5c636a; text-decoration: none; font: 500 12px 'DM Mono'; letter-spacing: .03em; }
+.site-footer-nav a:hover { color: #15181c; }
+.footer-note { color: #8a939b; font: 500 11px 'DM Mono'; }
+
+/* ---- Responsive: menu bar + homepage ---- */
+@media (max-width: 860px) {
+  .has-site-header { padding-top: 60px; }
+  .site-nav, .site-header-actions .site-cta { display: none; }
+  .nav-toggle { display: grid; }
+  .mobile-menu { display: flex; }
+  .site-header-inner { height: 60px; padding: 0 20px; }
+  .entry-card { max-width: none; width: 100%; }
+  .guides-grid { grid-template-columns: 1fr; }
+  .home-guides { padding: 30px 20px 50px; }
+  .site-footer-inner { padding: 22px 20px; flex-direction: column; align-items: flex-start; }
+  .hero { min-height: 0; padding-bottom: 5vh; }
+}
+@media (max-width: 520px) {
+  .role-cta-row { grid-template-columns: 1fr; }
+  .guides-head h2 { font-size: 30px; }
+}
