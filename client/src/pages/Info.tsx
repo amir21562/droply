@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Clock3, LockKeyhole, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Clock3, LockKeyhole, ShieldCheck } from "lucide-react";
 import { useEffect, type ReactNode } from "react";
+import { SiteFooter, SiteHeader } from "@/components/SiteHeader";
 
 const pageData = {
   how: {
@@ -67,11 +68,8 @@ export default function Info({ page }: { page: PageKey }) {
   }, [data, page]);
 
   return (
-    <main className="info-shell">
-      <header className="info-topbar">
-        <Link href="/" className="wordmark"><span className="wordmark-dot" /> droply</Link>
-        <Link href="/" className="back-link"><ArrowLeft size={15} /><span className="back-link-text">Back to Droply</span></Link>
-      </header>
+    <main className="info-shell has-site-header">
+      <SiteHeader />
       <div className="info-wrap">
         <div className="info-hero">
           <div className="kicker"><SparkMark /> {data.eyebrow}</div>
@@ -86,7 +84,7 @@ export default function Info({ page }: { page: PageKey }) {
           {page === "faq" && <FaqContent />}
         </div>
       </div>
-      <footer className="info-footer"><span>droply / quick sharing for real life</span><nav><Link href="/how-it-works">How it works</Link><Link href="/security">Security</Link><Link href="/privacy">Privacy</Link><Link href="/faq">FAQ</Link></nav></footer>
+      <SiteFooter />
     </main>
   );
 }
